@@ -10,8 +10,6 @@ for line in file:
 		ids = line
 	else:
 		tmp[line.strip("\n")].append(ids.rstrip())
-
-
 #print(tmp)
 for k in tmp:
 	tmp[k]=[s.replace('>', '') for s in tmp[k]]
