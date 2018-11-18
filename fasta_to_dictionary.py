@@ -6,10 +6,11 @@ import re
 
 tmp = defaultdict(list)
 
-file = open("test.fasta", "r")
+file = open("single_line.fasta", "r")
 
 for line in file:
 	if line.startswith(">"):
+		line = line.split(" ")[0].strip() # remove the all characters after first space
 		ids = line
 	else:
 		tmp[line.strip("\n")].append(ids.rstrip())
